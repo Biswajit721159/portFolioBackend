@@ -62,5 +62,5 @@ userSchema.methods.generateAccessToken = function (user, rememberMe) {
 	return data;
 };
 
-let User = model("user", userSchema);
-module.exports = User;
+let user = model("user", userSchema);
+module.exports = user;

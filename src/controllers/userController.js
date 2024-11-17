@@ -65,7 +65,7 @@ const forgotPassword = async (req, res) => {
 		const token = generateRandomToken(email);
 		exitUser.passwordResetToken = token;
 		const resetUrl = baseUrl + "/PasswordReset/" + token;
-		sendEmailForForgotPassword(email, resetUrl);
+		await sendEmailForForgotPassword(email, resetUrl);
 		await exitUser.save();
 		res.status(200).json({ message: "please check to email" });
 	} catch (e) {

@@ -15,9 +15,9 @@ const createMailOption = (email, subject, text, HtmlTemplates) => {
 	}
 };
 
-const sendMail = (mailOptions) => {
+const sendMail = async (mailOptions) => {
 	try {
-		transporter.sendMail(mailOptions, (error, info) => {
+		await transporter.sendMail(mailOptions, (error, info) => {
 			if (error) {
 				throw new Error("Failed to send email");
 			} else {
